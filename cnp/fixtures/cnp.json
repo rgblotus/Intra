@@ -1,0 +1,148 @@
+[
+  {
+    "aboutcnp": "C&P Department of GAIL (ISO 9001:2015 certified) is committed and responsible for procurement of Goods, Works, Services, Consultancy services relating to O&M, Business Development, Marketing, HR, Finance and Projects in a fair and transparent manner, Vendor Management, Managing the Inventory/stores across GAIL work-centers, Formulation of policies relating to procurement activities, Implementation of various Govt. policies from time to time including procurement through GeM, public procurement policies for Micro & Small Enterprises (MSEs), Public Procurement policy for Local Content, Domestically Manufactured Electronic Products, Make in India, Purchase Preference for Telecom Products, works or services and various other activities.",
+    "objective": "The objective of the Contracts & Procurement functions is to be able to provide the required equipment / material / services of the right quality in right quantity at the right price from right source so as to reach the specified place at the right time and to be able to execute works at site in required sequence and as per schedules allowing fair and equal opportunity of bidding to all competent bidders, subject to the management's guidelines in respect of Works / Procurement Policy.",
+    "highlights": {
+      "highlight": [
+        {
+          "url": "/static/app/img/text1.gif",
+          "width": 400,
+          "height": 400
+        },
+        {
+          "url": "/static/app/img/text2.gif",
+          "width": 400,
+          "height": 400
+        },
+        {
+          "url": "/static/app/img/text3.gif",
+          "width": 400,
+          "height": 400
+        },
+        {
+          "url": "/static/app/img/text4.gif",
+          "width": 400,
+          "height": 400
+        },
+        {
+          "url": "/static/app/img/text5.gif",
+          "width": 400,
+          "height": 400
+        }
+      ]
+    },
+    "aboutus": "To provide the required materials, works & services of right quality, in right quantity, at the right time & at right price by following the procedural norms as laid down by the company from time to time by giving fair & equal opportunity to all the eligible bidders and maintaining economy and 5 efficiency in all procurements with utmost emphasis to the satisfaction of both internal as well as external customer and creating excellence with ethics by fostering most ethical and corruption free business environment for all the Partners in Progress.",
+    "vision": "Be the leading Contracting and Procurement Company and ensuring timely delivery & execution. Creating excellence with ethics by fostering most ethical and corruption free business environment for all the Partners in Progress.",
+    "dataOrder": {
+      "labels": [
+        "FY 2017-18",
+        "FY 2018-19",
+        "FY 2019-20",
+        "FY 2020-21",
+        "FY 2021-22"
+      ],
+      "datasets": [
+        {
+          "label": "No's of Order",
+          "data": [5011, 5563, 5253, 5214, 5319],
+          "backgroundColor": [
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)"
+          ],
+          "borderColor": [
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)"
+          ],
+          "borderWidth": 1
+        },
+        {
+          "label": "Total Value (in INR Crores)",
+          "data": [8997, 8631, 5097, 7337, 8961],
+          "backgroundColor": [
+            "rgba(255, 99, 132, 0.4)",
+            "rgba(54, 162, 235, 0.4)",
+            "rgba(255, 206, 86, 0.4)",
+            "rgba(75, 192, 192, 0.4)",
+            "rgba(153, 102, 255, 0.4)"
+          ],
+          "borderColor": [
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)"
+          ],
+          "borderWidth": 2
+        },
+        {
+          "label": "Order Value MSE (in INR Crores)",
+          "data": [1362, 1663, 1369, 1390, 1478],
+          "backgroundColor": [
+            "rgba(255, 99, 132, 0.6)",
+            "rgba(54, 162, 235, 0.6)",
+            "rgba(255, 206, 86, 0.6)",
+            "rgba(75, 192, 192, 0.6)",
+            "rgba(153, 102, 255, 0.6)"
+          ],
+          "borderColor": [
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)"
+          ],
+          "borderWidth": 3
+        }
+      ]
+    },
+    "dataInventory": {
+      "labels": ["ONMR", "DISP", "PROJ", "PROR", "SURP", "NMI"],
+      "datasets": [
+        {
+          "label": "FY 2020-21",
+          "data": [910.32, 689.0, 500.06, 940.17, 300.38, 1000.0],
+          "backgroundColor": [
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)"
+          ],
+          "borderColor": [
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)"
+          ],
+          "borderWidth": 1
+        },
+        {
+          "label": "FY 2021-22",
+          "data": [947.97, 600.97, 812.39, 1000.3, 500.83, 1200.0],
+          "backgroundColor": [
+            "rgba(54, 162, 235, 0.4)",
+            "rgba(255, 206, 86, 0.4)",
+            "rgba(75, 192, 192, 0.4)",
+            "rgba(153, 102, 255, 0.4)"
+          ],
+          "borderColor": [
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)"
+          ],
+          "borderWidth": 2
+        }
+      ]
+    },
+    "store": "Inventory management is a critical aspect of running a successful store. It involves the planning, control, and tracking of all the goods or products that a store carries. Proper inventory management ensures that a store has the right products available to meet customer demand while minimizing carrying costs and the risk of overstocking or understocking. Effective inventory management is essential for maintaining profitability, satisfying customer demand, and optimizing resources. It requires a combination of sound strategies, accurate data, and the use of technology to ensure that a store has the right products available when customers need them while avoiding excessive carrying costs.",
+    "indent": "An indent is essentially a purchase requisition. It contains details such as the item or service needed, quantity, specifications, quality requirements, delivery schedule, and any other relevant information. The purpose of an indent is to initiate the procurement process within the organization.",
+    "team": "Our team is a diverse and dedicated group of professionals who bring a wealth of expertise and experience to the table. Committed to excellence and driven by a shared vision, we work collaboratively to achieve our goals and meet the challenges of our industry.",
+    "abutgail": "GAIL (India) Ltd was incorporated in August 1984 as a Central Public Sector Undertaking (PSU) under the Ministry of Petroleum & Natural Gas (MoP&NG). The company was initially given the responsibility of construction, operation & maintenance of the Hazira - Vijaypur -Jagdishpur (HVJ) pipeline Project. It was one of the largest cross-country natural gas pipeline projects in the world. Originally this 1800 Km long pipeline was built at a cost of Rs 1700 Crores and it laid the foundation for development of market for natural Gas in India."
+  }
+]

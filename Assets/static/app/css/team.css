@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0; /* Change to your desired background color */
+}
+.hero {
+  background-image: linear-gradient(rgba(255, 187, 0, 0.24),rgba(255, 217, 0, 0.233));
+  min-height: 800px;
+  margin-top: -80px;
+}
+
+.team {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Center text within */
+}
+
+.photo {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Center text within */
+}
+

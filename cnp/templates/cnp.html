@@ -1,0 +1,341 @@
+{% extends "base.html" %} {% load i18n %} {% load static %}
+
+<!-- Title -->
+{% block title %}C&P{% endblock %}
+
+<!-- CSS -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/cnp.css' %}" />
+{% endblock %}
+
+<!-- Content -->
+
+{% block content %}
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-lg">
+        <a class="navbar-brand" href="{% url 'home' %}"> <img src="{% static 'app/img/GAIL.png' %}" width="60px"
+                height="45px" alt="">
+            <span>Hazira</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#requisition">Requisition</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#job">Job</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#team">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDept"
+                        aria-controls="offcanvasRight">Department</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-info" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser"
+                        aria-controls="offcanvasRight"><span
+                            style="text-transform: capitalize;">{{user.username}}</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="hero" class="hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center text-center text-lg-start">
+                <h2>Welcome to <br><span>Contract & Procurement</span><br></h2>
+                <p style="text-align: justify;">{{fixture.0.aboutcnp}}</p>
+                <div class="d-flex justify-content-center justify-content-lg-start">
+                    <button type="button" class="btn btn-outline-info" style="margin-right: 1rem;">Get Started</button>
+                    <button type="button" class="btn btn-outline-info">Watch</button>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div id="highlightCarousel">
+                    <ul class="flip-items">
+                        {% for highlight in fixture.0.highlights.highlight %}
+                        <li data-flip-title="Red" data-flip-category="Purples" class="img-fluid">
+                            <img src="{{ highlight.url }}" width="{{ highlight.width }}" height="{{ highlight.height }}"
+                                alt="">
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <script>
+                    var highlightCarousel = $("#highlightCarousel").flipster({
+                        autoplay: 2000,
+                        loop: true,
+                        scrollwheel: false,
+                        buttons: true,
+                        spacing: -0.6,
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="vision" style="text-align: center;">
+        <h2>VISION STATEMENT</h2>
+        <p>{{fixture.0.vision}}</p>
+    </div>
+    <div class="row">
+        <h3 style="text-align: center;">Major Achievements by Corporate C&P</h3>
+        <div class="col-lg-6">
+            <canvas id="cocnporder"></canvas>
+        </div>
+        <div class="col-lg-6">
+            <canvas id="cocnpinventory"></canvas>
+        </div>
+    </div>
+</div>
+
+<section id="about" class="about">
+    <div class="container">
+        <div class="section-header" style="text-align: center;">
+            <h2>About Us</h2>
+            <p style="text-align: center;">{{fixture.0.aboutus}}</p>
+        </div>
+        <div class="order">
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>{{fixture.0.objective}}</p>
+                </div>
+                <div class="col-lg-6">
+                    <canvas id="cnporder"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="inventory">
+            <div class="row">
+                <div class="col-lg-6">
+                    <canvas id="cnpinventory"></canvas>
+                </div>
+                <div class="col-lg-6">
+                    <p>{{fixture.0.store}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="requisition" class="requisition">
+    <div class="container">
+        <div class="section-header" style="text-align: center;">
+            <h2>Requisition</h2>
+            <p>{{fixture.0.indent}}</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="btn-group-vertical" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-primary" data-filter="all">ALL</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="bis">BIS</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="civil">CIVIL</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="cnp">C&P</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="ele">ELECTRICAL</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="fna">F&A</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="fns">F&S</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="gailtel">GAILTEL</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="hr">HR</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="inst">INSTRUMENTATON</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="mech">MECHANICAL</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="ops">OPERATION</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="pipeline">PIPELINE</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="sec">SECURITY</button>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="input-group">
+                    <div class="input-group-text" id="btnGroupAddon">PR/SR</div>
+                    <input type="text" class="form-control" placeholder="Enter PR/SR Number"
+                        aria-label="Input group example" aria-describedby="btnGroupAddon">
+                    <div class="input-group-text" id="btnGroupAddon">Mode of Tendering</div>
+                    <input type="text" class="form-control" placeholder="Enter Purchase/Service Requisition"
+                        aria-label="Input group example" aria-describedby="btnGroupAddon">
+                    <div class="input-group-text" id="btnGroupAddon">@</div>
+                    <input type="text" class="form-control" placeholder="Enter Purchase/Service Requisition"
+                        aria-label="Input group example" aria-describedby="btnGroupAddon">
+                </div>
+                <div id="indentCarousel">
+                    <ul class="flip-items">
+                        {% for indent in indents %}
+                        <li data-flip-title="{{indent.indent_User.indentor_Dept}}"
+                            class="{{indent.indent_User.indentor_Dept}}">
+                            <div class="card" style="width: 18rem;">
+                                <img src="{% static 'app/img/text7.gif' %}" class="card-img-top" alt="{{indent.indent_User.indentor_Dept}}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{indent.indent_Job}}</h5>
+                                    <p class="card-text">{{indent.indent_Cost}}</p>
+                                    <p class="card-text">{{indent.indent_User.indentor_Dept}}</p>
+                                    <a href="{% url 'indent' %}" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <script>
+                    var indentCarousel = $("#indentCarousel").flipster({
+                        autoplay: 4000,
+                        loop: true,
+                        scrollwheel: false,
+                        buttons: true,
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="team" class="team">
+    <div class="container">
+        <div class="section-header" style="text-align: center;">
+            <h2>Our Team</h2>
+            <p>{{fixture.0.team}}</p>
+        </div>
+        <div id="teamCarousel">
+            <ul class="flip-items">
+                {% for indentor in indentors %}
+                <li data-flip-title="Red">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'app/img/text8.gif' %}" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{indentor.indentor_First_name}} {{indentor.indentor_Last_name}}</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up
+                                the bulk of the card's
+                                content.</p>
+                            <h6>{{indentor.indentor_Designation}} ({{indentor.indentor_Dept}})</h6>
+                            <a href="{% url 'team' %}" class="btn btn-primary">See More</a>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <script>
+            var teamCarousel = $("#teamCarousel").flipster({
+                style: "flat",
+                autoplay: 4000,
+                loop: true,
+                scrollwheel: false,
+                buttons: true,
+                spacing: -0.1,
+            });
+        </script>
+    </div>
+</section>
+
+<footer id="footer" class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <a href="index.html" class="logo d-flex align-items-center">
+                    <span>Gail (India) Limited</span>
+                </a>
+                <p>{{fixture.0.abutgail}}</p>
+                <div class="social-lnks d-flex">
+                    <a href="https://twitter.com/GAILindia" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/gail-india-limited" class="linkedin"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/c/GAILSocial" class="youtube"><i
+                            class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/GAILIndia" class="facebook"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/gailindia" class="instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="https://gailonline.com/">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-6">
+                <h4>Contact Us</h4>
+                <p> GAIL (India) Limited <br>
+                    Hazira Compressor Station<br>
+                    Icchapore Magdalla Road <br>
+                    Hazira -394518, P.O.-ONGC <br>
+                    Dist- Surat, Gujarat, INDIA <br><br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <div class="copyright">
+            &copy; Copyright <strong><span>GAIL</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits ">
+            Designed by <a href="https://gailonline.com/">GAIL (India) Limited</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Offcanvas User -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasUser" aria-labelledby="offcanvasUserLabel">
+    <div class="offcanvas-header">
+        <h5 id="offcanvasUserLabel" style="text-transform: capitalize;">{{user.first_name}} {{user.last_name}}</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            E-mail : {{user.email}}
+        </div>
+        <div>
+            Contact : {{user.mobile_number}}
+        </div>
+        <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+        <a class="dropdown-item" href="#">Profile</a>
+        <a class="dropdown-item" href="#">Analytics</a>
+    </div>
+</div>
+
+<!-- Offcanvas Department -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDept" aria-labelledby="offcanvasDeptLabel">
+    <div class="offcanvas-header">
+        <h5 id="offcanvasDeptLabel" style="text-transform: capitalize;">Departments</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <li><a class="dropdown-item" href="{% url 'bis' %}">BIS</a></li>
+        <li><a class="dropdown-item" href="{% url 'civil' %}">CIVIL</a></li>
+        <li><a class="dropdown-item" href="{% url 'cnp' %}">C&P</a></li>
+        <li><a class="dropdown-item" href="{% url 'ele' %}">ELECTRICAL</a></li>
+        <li><a class="dropdown-item" href="{% url 'fna' %}">Finance & Accounts</a></li>
+        <li><a class="dropdown-item" href="{% url 'fns' %}">Fire & Safety</a></li>
+        <li><a class="dropdown-item" href="{% url 'gailtel' %}">GAILTEL</a></li>
+        <li><a class="dropdown-item" href="{% url 'hr' %}">HR</a></li>
+        <li><a class="dropdown-item" href="{% url 'inst' %}">INST</a></li>
+        <li><a class="dropdown-item" href="{% url 'mech' %}">MECHANICAL</a></li>
+        <li><a class="dropdown-item" href="{% url 'ops' %}">OPERATION</a></li>
+        <li><a class="dropdown-item" href="{% url 'pipeline' %}">PIPELINE</a></li>
+    </div>
+</div>
+
+{% endblock %}
+
+<!-- JS -->
+{% block js %}
+{{ fixture|json_script:"mydata" }}
+<script defer src="{% static 'app/js/cnp.js' %}"></script>
+{% endblock %}

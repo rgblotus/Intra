@@ -1,0 +1,78 @@
+[
+  {
+    "brandimage": {
+      "url": "/static/app/img/GAIL.png",
+      "width": "60px",
+      "height": "45px"
+    },
+    "location": "Hazira",
+    "locationbrief": "Hazira-Vijaipur-Jagdishpur (HVJ) pipeline is India's first cross state gas pipeline. The project was started in 1986 after the incorporation of GAIL (India) Limited. The HVJ pipeline system consists of receiving and dispatch terminals for the supply of metered gas, compressor stations for boosting the pressure of gas, the SCADA system to provide central monitoring and control and a dedicated GAILTEL communications system to provide reliable voice and data communication.",
+    "highlights": {
+      "highlight": [
+        {
+          "url": "/static/app/img/text1.gif",
+          "width": 400,
+          "height": 400
+        },
+        {
+          "url": "/static/app/img/text2.gif",
+          "width": 400,
+          "height": 400
+        },
+        {
+          "url": "/static/app/img/text3.gif",
+          "width": 400,
+          "height": 400
+        },
+        {
+          "url": "/static/app/img/text4.gif",
+          "width": 400,
+          "height": 400
+        },
+        {
+          "url": "/static/app/img/text5.gif",
+          "width": 400,
+          "height": 400
+        }
+      ]
+    },
+    "actvities": {
+      "activity": [
+        {
+          "name": "Gas Compression, Sales & Transmission",
+          "url": "/static/app/icon/turbo.gif",
+          "width": 200,
+          "height": 200
+        },
+        {
+          "name": "Plant & Terminal Maintenance",
+          "url": "/static/app/icon/maintenance.gif",
+          "width": 200,
+          "height": 200
+        },
+        {
+          "name": "Pipeline, SVs & IPs Maintenance",
+          "url": "/static/app/icon/repair.gif",
+          "width": 200,
+          "height": 200
+        },
+        {
+          "name": "Meter Calibration Facility",
+          "url": "/static/app/icon/voltmeter.gif",
+          "width": 200,
+          "height": 200
+        }
+      ]
+    },
+    "about": "We specialize in various facets of the energy sector, including Gas Compression, Sales & Transmission. Our expertise extends to Plant & Terminal Maintenance, ensuring the smooth and efficient operation of vital energy infrastructure. Additionally, we are highly proficient in Pipeline, SVs & IPs Maintenance, guaranteeing the integrity and reliability of gas transport systems. Furthermore, our capabilities encompass Meter Calibration Facility, where precision and accuracy are paramount in measuring and monitoring gas flow. Through these core competencies, we contribute significantly to the seamless functioning of the energy industry, promoting reliability, safety, and efficiency.",
+    "safety": {
+      "url": "/static/app/icon/maintenance.gif",
+      "width": "300px",
+      "height": "300px"
+    },
+    "portfolio": "Our portfolio is a reflection of our diverse range of interests, investments, and assets across various industries and sectors. It represents our strategic approach to managing our resources and capital to achieve our financial and strategic objectives. In our portfolio, you will find a mix of investments that may include stocks, bonds, real estate, businesses, and other assets. Each component of our portfolio is carefully selected and managed to balance risk and return, with the goal of generating long-term value and financial growth. Diversification is a key principle in our portfolio management strategy. We spread our investments across different asset classes and industries to reduce risk and enhance the potential for stable returns, even in fluctuating market conditions. We actively review and adjust our portfolio to align with our evolving goals and market dynamics. Our portfolio management team employs a combination of research, analysis, and expertise to make informed decisions about asset allocation, investment selection, and risk management. Ultimately, our portfolio is a dynamic and integral part of our financial strategy, helping us pursue our financial objectives while managing risk effectively. It reflects our commitment to sound financial management and prudent investment practices.",
+    "client": "Our clients are at the heart of everything we do, and their satisfaction and success are our top priorities. We understand that each client is unique, with their own specific needs, goals, and challenges. As a result, we tailor our products and services to meet those individual requirements. We are committed to building strong, long-lasting relationships with our clients. This means we listen attentively to their concerns and aspirations, providing personalized solutions and support. We aim to be a trusted partner, offering expertise, guidance, and resources to help our clients achieve their objectives. Client satisfaction is a fundamental benchmark of our success. We continuously seek feedback and strive to exceed our clients' expectations, whether it's through delivering exceptional products, providing timely and efficient services, or addressing any concerns promptly and professionally. Ultimately, our clients are the driving force behind our business, and we are dedicated to delivering value and ensuring their success in every interaction and engagement.",
+    "service":"Our company offers a comprehensive range of services designed to meet the diverse needs of our clients. Our services are delivered with a commitment to excellence, quality, and customer satisfaction.",
+    "team": "Our team is a diverse and dedicated group of professionals who bring a wealth of expertise and experience to the table. Committed to excellence and driven by a shared vision, we work collaboratively to achieve our goals and meet the challenges of our industry. With a passion for innovation, our team is constantly seeking new ways to improve and adapt to the evolving landscape of our field. We value creativity, adaptability, and a spirit of continuous learning, which enables us to stay at the forefront of our industry. Our team's strength lies not only in our individual talents but also in our ability to work together cohesively. We foster a culture of communication, collaboration, and mutual support, which enhances our collective capabilities and allows us to tackle complex projects with confidence. As a team, we take pride in our contributions to the success of our organization and the broader energy sector. We are dedicated to upholding the highest standards of professionalism, safety, and sustainability in all that we do. Through our combined efforts, we strive to make a meaningful and positive impact in the world of energy."
+  }
+]

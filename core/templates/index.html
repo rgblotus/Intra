@@ -1,0 +1,580 @@
+{% extends "base.html" %} {% load i18n %} {% load static %}
+
+<!-- Title -->
+{% block title %}Home{% endblock %}
+
+<!-- CSS -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/index.css' %}" />
+{% endblock %}
+
+<!-- Content -->
+
+{% block content %}
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-lg">
+        <a class="navbar-brand" href="#"> <img src={{fixture.0.brandimage.url}} width={{fixture.0.brandimage.width}}
+                height={{fixture.0.brandimage.height}} alt="">
+            <span id="location">{{fixture.0.location}}</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#feature">Feature</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#team">Team</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDept"
+                        aria-controls="offcanvasRight">Department</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-info" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser"
+                        aria-controls="offcanvasRight"><span
+                            style="text-transform: capitalize;">{{user.username}}</span></a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="btn btn-outline-info" href="#" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="hero" class="hero">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-5">
+                <div id="hazira">
+                    <h2>Welcome to <span id="office">{{fixture.0.location}}</span></h2>
+                    <p>{{fixture.0.locationbrief}}</p>
+                    <div class="d-flex">
+                        <button type="button" class="btn btn-outline-info" style="margin-right: 3rem;">Get
+                            Started</button>
+                        <button type="button" class="btn btn-outline-info">Safety Instruction</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 ">
+                <div id="highlightCarousel">
+                    <ul class="flip-items">
+                        {% for highlight in fixture.0.highlights.highlight %}
+                        <li data-flip-title="Red" data-flip-category="Purples" class="img-fluid">
+                            <img src="{{ highlight.url }}" width="{{ highlight.width }}" height="{{ highlight.height }}"
+                                alt="">
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <script>
+                    var highlightCarousel = $("#highlightCarousel").flipster({
+                        autoplay: 2000,
+                        loop: true,
+                        scrollwheel: false,
+                        buttons: true,
+                        spacing: -0.6,
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="top" class="top">
+    <div class="container">
+        <div class="row">
+            {% for activity in fixture.0.actvities.activity %}
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <img src="{{ activity.url }}" class="card-img-top rounded-top" alt="..."
+                        width="{{ activity.width }}" height="{{ activity.height }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ activity.name }}</h5>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <div class="section-header" style="text-align: center;">
+            <h2>About Us</h2>
+            <p>{{fixture.0.about}}</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-6" id="safety">
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus sit, atque voluptatum impedit
+                    corporis molestias modi, eum ratione dolorem, voluptate omnis velit libero quidem voluptatem quaerat
+                    laboriosam totam ex. Perferendis!</h3>
+                <img src="{% static 'app/img/text1.gif' %}" class="img-fluid rounded-4 mb-4" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis totam fugit quidem dolore id quam
+                    suscipit repellendus, sed maiores, maxime voluptates explicabo perspiciatis enim. Ullam consectetur
+                    perferendis dicta deserunt voluptatum?</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur dignissimos quas facilis animi
+                    ipsum. Voluptate, similique consectetur dolores repellat nihil maxime asperiores accusantium numquam
+                    molestiae repudiandae, quae eum? Iure, necessitatibus.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="content">
+                    <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ex vitae,
+                        eveniet maiores sequi aperiam iusto placeat omnis consequatur autem perferendis consectetur? Eos
+                        sit eligendi fugiat vitae quisquam enim autem.</p>
+                    <ul>
+                        <li>
+                            Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit. Minima magnam officia corporis, nobis, laborum quas adipisci
+                            asperiores nostrum perspiciatis nesciunt, sapiente eligendi reiciendis quia suscipit quis
+                            qui dignissimos aut odio?
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit. Minima magnam officia corporis, nobis, laborum quas adipisci
+                            asperiores nostrum perspiciatis nesciunt, sapiente eligendi reiciendis quia suscipit quis
+                            qui dignissimos aut odio?
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit. Minima magnam officia corporis, nobis, laborum quas adipisci
+                            asperiores nostrum perspiciatis nesciunt, sapiente eligendi reiciendis quia suscipit quis
+                            qui dignissimos aut odio?
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="{% static 'app/img/text2.gif' %}" class="img-fluid rounded-4" alt="">
+                    <a href=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="clients" class="clients">
+    <div class="container text-center my-3">
+        <div class="section-header" style="text-align: center;">
+            <h2>Clients</h2>
+            <p>{{fixture.0.client}}</p>
+        </div>
+        <div>
+            <div class="row" style="align-items: center;">
+                <div class="col-lg-7">
+                    <div id="clientCarousel">
+                        <ul class="flip-items">
+                            <li data-flip-title="Red">
+                                <img src="{% static 'app/img/text1.gif' %}">
+                            </li>
+                            <li data-flip-title="Razzmatazz" data-flip-category="Purples">
+                                <img src="{% static 'app/img/text2.gif' %}">
+                            </li>
+                            <li data-flip-title="Deep Lilac" data-flip-category="Purples">
+                                <img src="{% static 'app/img/text3.gif' %}">
+                            </li>
+                            <li data-flip-title="Daisy Bush" data-flip-category="Purples">
+                                <img src="{% static 'app/img/text4.gif' %}">
+                            </li>
+                            <li data-flip-title="Daisy Bush" data-flip-category="Purples">
+                                <img src="{% static 'app/img/text5.gif' %}">
+                            </li>
+                        </ul>
+                    </div>
+                    <script>
+                        var clientCarousel = $("#clientCarousel").flipster({
+                            autoplay: 2000,
+                            loop: true,
+                            scrollwheel: false,
+                            spacing: -0.6,
+                        });
+                    </script>
+                </div>
+                <div class="col-lg-5" id="stats-counter">
+                    <div class="stats-item d-flex align-items-center">
+                        <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p><strong>Happy Clients</strong> consequuntur quae diredo para mesta</p>
+                    </div><!-- End Stats Item -->
+
+                    <div class="stats-item d-flex align-items-center">
+                        <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p><strong>Projects</strong> adipisci atque cum quia aut</p>
+                    </div><!-- End Stats Item -->
+
+                    <div class="stats-item d-flex align-items-center">
+                        <span data-purecounter-start="0" data-purecounter-end="453" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p><strong>Hours Of Support</strong> aut commodi quaerat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="services">
+    <div class="container">
+        <div class="section-header" style="text-align: center;">
+            <h2>Our Services</h2>
+            <p>{{fixture.0.service}}</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="card" style="width: auto;">
+                        <img src="{% static 'app/img/text1.gif' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Gas Compression Services</h5>
+                            <p class="card-text">We specialize in gas compression solutions, ensuring the efficient and
+                                reliable transport of natural gas. Our services
+                                encompass the design, installation, maintenance, and optimization of compression
+                                systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="card" style="width: auto;">
+                        <img src="{% static 'app/img/text2.gif' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Sales & Transmission Services</h5>
+                            <p class="card-text">We facilitate the sale and transmission of natural gas, providing a
+                                vital link between producers and consumers. Our
+                                expertise ensures the seamless flow of gas through pipelines and distribution networks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="card" style="width: auto;">
+                        <img src="{% static 'app/img/text3.gif' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Plant & Terminal Maintenance</h5>
+                            <p class="card-text">We offer comprehensive maintenance services for plants and terminals
+                                involved in the energy sector. Our maintenance
+                                programs are designed to enhance operational efficiency, safety, and compliance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="card" style="width: auto;">
+                        <img src="{% static 'app/img/text4.gif' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Pipeline, SVs & IPs Maintenance</h5>
+                            <p class="card-text">Our pipeline services cover the construction, maintenance, and
+                                inspection of gas pipelines. We prioritize pipeline
+                                integrity to ensure the safe and reliable transport of gas.</p>
+                            <p class="card-text">We specialize in the maintenance of safety valves (SVs) and isolation
+                                points (IPs) within gas systems. These services
+                                contribute to system safety and reliability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="card" style="width: auto;">
+                        <img src="{% static 'app/img/text6.gif' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Meter Calibration Facility</h5>
+                            <p class="card-text">We provide meter calibration services, guaranteeing accurate
+                                measurement of gas flow. Our precise calibration ensures
+                                compliance with industry standards and regulations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="card" style="width: auto;">
+                        <img src="{% static 'app/img/text6.gif' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Environmental and Regulatory Compliance</h5>
+                            <p class="card-text">We provide guidance and support to ensure compliance with environmental
+                                regulations and safety standards, promoting
+                                responsible and sustainable energy practices.</p>
+                            <p>Our commitment to excellence, safety, and sustainability underpins all our services. We
+                                continually invest in innovation
+                                and technology to deliver the highest level of service quality while minimizing
+                                environmental impact. Our goal is to be
+                                a trusted partner in the energy industry, helping clients achieve their objectives and
+                                contribute to a more sustainable
+                                energy future.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="section-header" style="text-align: center;">
+            <h2>Portfolio</h2>
+            <p>{{fixture.0.portfolio}}</p>
+        </div>
+        <div class="filters">
+            <span class="filter" data-filter="dev">DEV</span>
+            <span class="filter" data-filter="design">DESIGN</span>
+            <span class="filter" data-filter="all">ALL</span>
+        </div>
+
+        <div class="projects">
+            <div class="project" data-filter="dev">DEV 1</div>
+            <div class="project" data-filter="design">DESIGN 1</div>
+            <div class="project" data-filter="dev">DEV 2</div>
+            <div class="project hide" data-filter="dev">DEV 3</div>
+            <div class="project" data-filter="design">DESIGN 2</div>
+            <div class="project" data-filter="dev">DEV 4</div>
+        </div>
+    </div>
+</section>
+
+<section id="team" class="team">
+    <div class="container">
+        <div class="section-header" style="text-align: center;">
+            <h2>Our Team</h2>
+            <p>{{fixture.0.team}}</p>
+        </div>
+        <div>
+            <div id="teamCarousel">
+                <ul class="flip-items">
+                    {% for activity in fixture.0.actvities.activity %}
+                    <li data-flip-title="Red">
+                        <div class="card">
+                            <img src="{% static 'app/img/text1.gif' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Rajeev Kumar</h5>
+                                <p class="card-text">Senior Manager (C&P)</p>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <script>
+                var teamCarousel = $("#teamCarousel").flipster({
+                    style: "flat",
+                    autoplay: 4000,
+                    loop: true,
+                    scrollwheel: false,
+                    buttons: true,
+                    spacing: -0.1,
+                });
+            </script>
+        </div>
+    </div>
+</section>
+
+<footer id="footer" class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <a href="index.html" class="logo d-flex align-items-center">
+                    <span>Gail (India) Limited</span>
+                </a>
+                <p>GAIL (India) Ltd was incorporated in August 1984 as a Central Public Sector Undertaking (PSU) under
+                    the Ministry of
+                    Petroleum & Natural Gas (MoP&NG). The company was initially given the responsibility of
+                    construction, operation &
+                    maintenance of the Hazira - Vijaypur -Jagdishpur (HVJ) pipeline Project. It was one of the largest
+                    cross-country natural
+                    gas pipeline projects in the world. Originally this 1800 Km long pipeline was built at a cost of Rs
+                    1700 Crores and it
+                    laid the foundation for development of market for natural Gas in India.</p>
+                <div class="social-lnks d-flex">
+                    <a href="https://twitter.com/GAILindia" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/gail-india-limited" class="linkedin"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/c/GAILSocial" class="youtube"><i
+                            class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/GAILIndia" class="facebook"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/gailindia" class="instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="https://gailonline.com/">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-6">
+                <h4>Contact Us</h4>
+                <p> GAIL (India) Limited <br>
+                    Hazira Compressor Station<br>
+                    Icchapore Magdalla Road <br>
+                    Hazira -394518, P.O.-ONGC <br>
+                    Dist- Surat, Gujarat, INDIA <br><br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <div class="copyright">
+            &copy; Copyright <strong><span>GAIL</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits ">
+            Designed by <a href="https://gailonline.com/">GAIL (India) Limited</a>
+        </div>
+    </div>
+</footer>
+
+<button id="scrollToTopBtn" class="scroll-to-top-btn"><i class="fa-solid fa-arrow-up fa-bounce"></i></button>
+
+<!-- Sign in Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalTitle">Welcome Back</h5>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'home' %}" method="post" id="loginForm">
+                    {% csrf_token %}
+                    {{loginForm.as_p}}
+                    <button type="submit" name="login_submit" value="login_submit"
+                        class="btn btn-primary">SignIn</button>
+                </form>
+                <div id="loginError" class="alert alert-danger mt-3" style="display: none;"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-target="#registermodal" data-bs-toggle="modal"
+                    data-bs-dismiss="modal">SignUp</button>
+                <button class="btn btn-primary" data-bs-target="#resetPasswordmodal" data-bs-toggle="modal"
+                    data-bs-dismiss="modal">Reset Password</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Registration Modal-->
+<div class="modal fade" id="registermodal" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registermodallTitle">Register</h5>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'home' %}" method="post" id="registerForm">
+                    {% csrf_token %}
+                    {{registrationForm.as_p}}
+                    <button type="submit" name="register_submit" value="register_submit"
+                        class="btn btn-primary">Register</button>
+                </form>
+                <div id="contactError" class="alert alert-danger mt-3" style="display: none;"></div>
+                <div id="registerError" class="alert alert-danger mt-3" style="display: none;"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-target="#loginModal" data-bs-toggle="modal"
+                    data-bs-dismiss="modal">Login</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Forgot/Reset Password Modal -->
+<div class="modal fade" id="resetPasswordmodal" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="resetPassowrdmodallTitle">Reset Password</h5>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'home' %}" method="post" id="resetPasswordForm">
+                    {% csrf_token %}
+                    {{resetPasswordForm.as_p}}
+                    <button type="submit" name="reset_submit" value="reset_submit" class="btn btn-primary">Reset
+                        Password</button>
+                </form>
+                <div id="resetError" class="alert alert-danger mt-3" style="display: none;"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-target="#loginModal" data-bs-toggle="modal"
+                    data-bs-dismiss="modal">Login</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Offcanvas User -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasUser" aria-labelledby="offcanvasUserLabel">
+    <div class="offcanvas-header">
+        <h5 id="offcanvasUserLabel" style="text-transform: capitalize;">{{user.first_name}} {{user.last_name}}</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            E-mail : {{user.email}}
+        </div>
+        <div>
+            Contact : {{user.mobile_number}}
+        </div>
+        <a class="btn btn-outline-info" href="{% url 'logout' %}">Logout</a>
+        <a class="btn btn-outline-info" href="#">Change Password</a>
+        <a class="btn btn-outline-info" href="#">Analytics</a>
+    </div>
+</div>
+
+<!-- Offcanvas Department -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDept" aria-labelledby="offcanvasDeptLabel">
+    <div class="offcanvas-header">
+        <h5 id="offcanvasDeptLabel" style="text-transform: capitalize;">Departments</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <li><a class="btn btn-outline-info" href="{% url 'bis' %}">BIS</a></li>
+        <li><a class="btn btn-outline-info" href="{% url 'civil' %}">CIVIL</a></li>
+        <li><a class="btn btn-outline-info" href="{% url 'cnp' %}">C&P</a></li>
+        <li><a class="btn btn-outline-info" href="{% url 'ele' %}">ELECTRICAL</a></li>
+        <li><a class="btn btn-outline-info" href="{% url 'fna' %}">Finance & Accounts</a></li>
+        <li><a class="btn btn-outline-info" href="{% url 'fns' %}">Fire & Safety</a></li>
+        <li><a class="btn btn-outline-info" href="{% url 'gailtel' %}">GAILTEL</a></li>
+        <li><a class="btn btn-outline-info" href="{% url 'hr' %}">HR</a></li>
+        <li><a class="btn btn-outline-info" href="{% url 'inst' %}">INST</a></li>
+        <li><a class="btn btn-outline-info" href="{% url 'mech' %}">MECHANICAL</a></li>
+        <li><a class="btn btn-outline-info" href="{% url 'ops' %}">OPERATION</a></li>
+        <li><a class="btn btn-outline-info" href="{% url 'pipeline' %}">PIPELINE</a></li>
+    </div>
+</div>
+
+{% endblock %}
+
+<!-- JS -->
+{% block js %}
+<script defer src="{% static 'app/js/index.js' %}"></script>
+{% endblock %}

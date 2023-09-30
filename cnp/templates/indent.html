@@ -1,0 +1,79 @@
+{% extends "base.html" %} {% load i18n %} {% load static %}
+
+<!-- Title -->
+{% block title %}Indent{% endblock %}
+
+<!-- CSS -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/indent.css' %}" />
+{% endblock %}
+
+<!-- Content -->
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-lg">
+        <a class="navbar-brand" href="{% url 'home' %}"> <img src="{% static 'app/img/GAIL.png' %}" width="60px"
+                height="45px" alt="">
+            <span>Hazira</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#requisition">Progress</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#job">Detail</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDept"
+                        aria-controls="offcanvasRight">Department</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-info" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser"
+                        aria-controls="offcanvasRight"><span
+                            style="text-transform: capitalize;">{{user.username}}</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="hero" class="hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="indent">
+                    <h2>Hello</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, unde culpa. Veniam minus eius
+                        qui aut temporibus nostrum similique ipsum itaque, aspernatur dolor eum rerum aliquam
+                        consequatur possimus laborum ad!</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="requisition">
+                    <img src="{% static 'app/img/GAIL.png' %}" width="60px" height="45px" alt="">
+                    <h2></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+{% endblock %}
+
+<!-- JS -->
+{% block js %}
+<script defer src="{% static 'app/js/indent.js' %}"></script>
+{% endblock %}
